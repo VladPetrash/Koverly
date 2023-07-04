@@ -29,7 +29,9 @@ window.addEventListener("alpine:init", () => {
             },
             valueFrom: '0',
             valueTo: '1,000',
-            rate: 1
+            rate: 1,
+            valueFromNumber: '',
+            valueToNumber: ''
         },
         init() {
             this.refreshData(this.buyValue);
