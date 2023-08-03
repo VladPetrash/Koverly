@@ -141,21 +141,7 @@ window.addEventListener("alpine:init", () => {
 
 
 /* second calculator */
-window.sellList = [
-    {
-        currencySymbol: "$",
-        countryFlag: "🇺🇸",
-        currencyName: "USD",
-        currencyDescription: "United States dollar",
-    },
-];
 window.addEventListener("alpine:init", () => {
-    // sort a-z
-    buttonsList.sort(function (a, b) {
-        var textA = a.currencyName.toUpperCase();
-        var textB = b.currencyName.toUpperCase();
-        return textA < textB ? -1 : textA > textB ? 1 : 0;
-    });
     Alpine.data("exchanger-second", () => ({
         data: {
             buyCurrency: {
