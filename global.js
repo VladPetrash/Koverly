@@ -98,7 +98,7 @@ window.addEventListener("alpine:init", () => {
             this.refreshData();
             this.data.valueFromNumber = Number(parseFloat(this.data.valueFrom.replace(/,/g, '')));
             this.data.valueToNumber = this.data.valueFromNumber / this.data.rate;
-            this.data.valueTo = this.data.valueToNumber.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigit
+            this.data.valueTo = this.data.valueToNumber.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
             this.data.valueToNumber = this.data.valueToNumber.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
         },
 
@@ -213,7 +213,7 @@ window.addEventListener("alpine:init", () => {
             this.refreshData();
             this.data.valueFromNumber = Number(parseFloat(this.data.valueFrom.replace(/,/g, '')));
             this.data.valueToNumber = this.data.valueFromNumber / this.data.rate;
-            this.data.valueTo = this.data.valueToNumber.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigit
+            this.data.valueTo = this.data.valueToNumber.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
             this.data.valueToNumber = this.data.valueToNumber.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
         },
 
