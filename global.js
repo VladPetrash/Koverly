@@ -142,7 +142,7 @@ window.addEventListener("alpine:init", () => {
 
 /* second calculator */
 window.addEventListener("alpine:init", () => {
-    Alpine.data("exchanger-second", () => ({
+    Alpine.data("exchanger2", () => ({
         data: {
             buyCurrency: {
                 currencySymbol: "€",
