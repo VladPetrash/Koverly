@@ -7,6 +7,7 @@ window.sellList = [
         currencyDescription: "United States dollar",
     },
 ];
+
 window.addEventListener("alpine:init", () => {
     // sort a-z
     buttonsList.sort(function (a, b) {
@@ -97,22 +98,8 @@ window.addEventListener("alpine:init", () => {
             this.refreshData();
             this.data.valueFromNumber = Number(parseFloat(this.data.valueFrom.replace(/,/g, '')));
             this.data.valueToNumber = this.data.valueFromNumber / this.data.rate;
-            this.data.valueTo = this.data.valueToNumber.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            this.data.totalPaymentsFirst = this.data.valueToNumber + (1.5 / 100) * this.data.valueToNumber;
-            this.data.paymentFirst = this.data.totalPaymentsFirst / 4;
-            this.data.totalPaymentsSecond = this.data.valueToNumber + (3 / 100) * this.data.valueToNumber;
-            this.data.paymentSecond = this.data.totalPaymentsSecond / 8;
-            this.data.totalPaymentsThird = this.data.valueToNumber + (4.5 / 100) * this.data.valueToNumber;
-            this.data.paymentThird = this.data.totalPaymentsThird / 12;
+            this.data.valueTo = this.data.valueToNumber.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigit
             this.data.valueToNumber = this.data.valueToNumber.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            this.data.totalResult = this.data.valueToNumber.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            this.data.totalPaymentsFirst = this.data.totalPaymentsFirst.toLocaleString("en-US", {maximumFractionDigits: 2,});
-            this.data.paymentFirst = this.data.paymentFirst.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            this.data.totalPaymentsSecond = this.data.totalPaymentsSecond.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            this.data.paymentSecond = this.data.paymentSecond.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            this.data.totalPaymentsThird = this.data.totalPaymentsThird.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            this.data.paymentThird = this.data.paymentThird.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            console.log("sell");
         },
 
         buyValue() {
@@ -120,28 +107,29 @@ window.addEventListener("alpine:init", () => {
             this.data.valueToNumber = Number(parseFloat(this.data.valueTo.replace(/,/g, '')));
             this.data.valueFromNumber = this.data.valueToNumber * this.data.rate;
             this.data.valueFrom = this.data.valueFromNumber.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            this.data.totalPaymentsFirst = this.data.valueFromNumber + (1.5 / 100) * this.data.valueFromNumber;
-            this.data.paymentFirst = this.data.totalPaymentsFirst / 4;
-            this.data.totalPaymentsSecond = this.data.valueFromNumber + (3 / 100) * this.data.valueFromNumber;
-            this.data.paymentSecond = this.data.totalPaymentsSecond / 8;
-            this.data.totalPaymentsThird = this.data.valueFromNumber + (4.5 / 100) * this.data.valueFromNumber;
-            this.data.paymentThird = this.data.totalPaymentsThird / 12;
             this.data.valueFromNumber = this.data.valueFromNumber.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            this.data.totalResult = this.data.valueFromNumber.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            this.data.totalPaymentsFirst = this.data.totalPaymentsFirst.toLocaleString("en-US", {maximumFractionDigits: 2,});
-            this.data.paymentFirst = this.data.paymentFirst.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            this.data.totalPaymentsSecond = this.data.totalPaymentsSecond.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            this.data.paymentSecond = this.data.paymentSecond.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            this.data.totalPaymentsThird = this.data.totalPaymentsThird.toLocaleString("en-US", {maximumFractionDigits: 2,});
-            this.data.paymentThird = this.data.paymentThird.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            console.log("buy" , "valueFromNumber = " + this.data.valueFromNumber, "valueFrom = " + this.data.valueFrom);
         },
     }));
 });
 
 
 /* second calculator */
+window.sellList = [
+    {
+        currencySymbol: "$",
+        countryFlag: "🇺🇸",
+        currencyName: "USD",
+        currencyDescription: "United States dollar",
+    },
+];
+
 window.addEventListener("alpine:init", () => {
+    // sort a-z
+    buttonsList.sort(function (a, b) {
+        var textA = a.currencyName.toUpperCase();
+        var textB = b.currencyName.toUpperCase();
+        return textA < textB ? -1 : textA > textB ? 1 : 0;
+    });
     Alpine.data("exchanger2", () => ({
         data: {
             buyCurrency: {
@@ -225,22 +213,8 @@ window.addEventListener("alpine:init", () => {
             this.refreshData();
             this.data.valueFromNumber = Number(parseFloat(this.data.valueFrom.replace(/,/g, '')));
             this.data.valueToNumber = this.data.valueFromNumber / this.data.rate;
-            this.data.valueTo = this.data.valueToNumber.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            this.data.totalPaymentsFirst = this.data.valueToNumber + (1.5 / 100) * this.data.valueToNumber;
-            this.data.paymentFirst = this.data.totalPaymentsFirst / 4;
-            this.data.totalPaymentsSecond = this.data.valueToNumber + (3 / 100) * this.data.valueToNumber;
-            this.data.paymentSecond = this.data.totalPaymentsSecond / 8;
-            this.data.totalPaymentsThird = this.data.valueToNumber + (4.5 / 100) * this.data.valueToNumber;
-            this.data.paymentThird = this.data.totalPaymentsThird / 12;
+            this.data.valueTo = this.data.valueToNumber.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigit
             this.data.valueToNumber = this.data.valueToNumber.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            this.data.totalResult = this.data.valueToNumber.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            this.data.totalPaymentsFirst = this.data.totalPaymentsFirst.toLocaleString("en-US", {maximumFractionDigits: 2,});
-            this.data.paymentFirst = this.data.paymentFirst.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            this.data.totalPaymentsSecond = this.data.totalPaymentsSecond.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            this.data.paymentSecond = this.data.paymentSecond.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            this.data.totalPaymentsThird = this.data.totalPaymentsThird.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            this.data.paymentThird = this.data.paymentThird.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            console.log("sell");
         },
 
         buyValue() {
@@ -248,21 +222,7 @@ window.addEventListener("alpine:init", () => {
             this.data.valueToNumber = Number(parseFloat(this.data.valueTo.replace(/,/g, '')));
             this.data.valueFromNumber = this.data.valueToNumber * this.data.rate;
             this.data.valueFrom = this.data.valueFromNumber.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            this.data.totalPaymentsFirst = this.data.valueFromNumber + (1.5 / 100) * this.data.valueFromNumber;
-            this.data.paymentFirst = this.data.totalPaymentsFirst / 4;
-            this.data.totalPaymentsSecond = this.data.valueFromNumber + (3 / 100) * this.data.valueFromNumber;
-            this.data.paymentSecond = this.data.totalPaymentsSecond / 8;
-            this.data.totalPaymentsThird = this.data.valueFromNumber + (4.5 / 100) * this.data.valueFromNumber;
-            this.data.paymentThird = this.data.totalPaymentsThird / 12;
             this.data.valueFromNumber = this.data.valueFromNumber.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            this.data.totalResult = this.data.valueFromNumber.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            this.data.totalPaymentsFirst = this.data.totalPaymentsFirst.toLocaleString("en-US", {maximumFractionDigits: 2,});
-            this.data.paymentFirst = this.data.paymentFirst.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            this.data.totalPaymentsSecond = this.data.totalPaymentsSecond.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            this.data.paymentSecond = this.data.paymentSecond.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            this.data.totalPaymentsThird = this.data.totalPaymentsThird.toLocaleString("en-US", {maximumFractionDigits: 2,});
-            this.data.paymentThird = this.data.paymentThird.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2,});
-            console.log("buy" , "valueFromNumber = " + this.data.valueFromNumber, "valueFrom = " + this.data.valueFrom);
         },
     }));
 });
