@@ -16,16 +16,16 @@ window.addEventListener("alpine:init", () => {
     Alpine.data("exchanger", () => ({
         data: {
             buyCurrency: {
-                currencySymbol: "€",
-                countryFlag: "🇪🇺",
-                currencyName: "EUR",
-                currencyDescription: "Euro",
-            },
-            sellCurrency: {
                 currencySymbol: "$",
                 countryFlag: "🇺🇸",
                 currencyName: "USD",
                 currencyDescription: "United States dollar",
+            },
+            sellCurrency: {
+                currencySymbol: "€",
+                countryFlag: "🇪🇺",
+                currencyName: "EUR",
+                currencyDescription: "Euro",
             },
             valueFrom: '0',
             valueTo: '1,000',
