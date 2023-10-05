@@ -78,7 +78,8 @@ window.addEventListener("alpine:init", () => {
             } catch (e) {
                 console.log(e);
             }
-            this.data.rate = result.rate;
+            //!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            //this.data.rate = result.rate;
             if (callback) {
                 callback.apply(this);
             }
