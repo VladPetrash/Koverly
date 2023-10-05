@@ -28,7 +28,7 @@ window.addEventListener("alpine:init", () => {
                 currencyDescription: "Euro",
             },
             valueFrom: '0',
-            valueTo: '1,000',
+            valueTo: '1,00000',
             rate: 1,
             valueFromNumber: '',
             valueToNumber: ''
