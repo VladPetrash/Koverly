@@ -1,4 +1,43 @@
-window.sellList = [
+window.buttonsListGp = [
+   {currencySymbol: '$', countryFlag: '🇺🇸', currencyName: 'USD', currencyDescription: 'United States dollar'},
+   {currencySymbol: '€', countryFlag: '🇪🇺', currencyName: 'EUR', currencyDescription: 'Euro'},
+   {currencySymbol: 'د.إ', countryFlag: '🇦🇪', currencyName: 'AED', currencyDescription: 'United Arab Emirates Dirham'},
+   {currencySymbol: 'A$', countryFlag: '🇦🇺', currencyName: 'AUD', currencyDescription: 'Australian Dollar'},
+   {currencySymbol: 'Лв.', countryFlag: '🇧🇬', currencyName: 'BGN', currencyDescription: 'Bulgarian Lev'},
+   {currencySymbol: 'C$', countryFlag: '🇨🇦', currencyName: 'CAD', currencyDescription: 'Canadian Dollar'},
+   {currencySymbol: 'CHf', countryFlag: '🇨🇭', currencyName: 'CHF', currencyDescription: 'Swiss Franc'},
+   {currencySymbol: '¥', countryFlag: '🇨🇳', currencyName: 'CNY', currencyDescription: 'Chinese Yuan'},
+   {currencySymbol: 'Kč', countryFlag: '🇨🇿', currencyName: 'CZK', currencyDescription: 'Czech Koruna'},
+   {currencySymbol: 'Kr.', countryFlag: '🇩🇰', currencyName: 'DKK', currencyDescription: 'Danish Krone'},
+ 	 {currencySymbol: '£', countryFlag: '🇬🇧', currencyName: 'GBP', currencyDescription: 'British Pound'},
+   {currencySymbol: 'HK$', countryFlag: '🇭🇰', currencyName: 'HKD', currencyDescription: 'Hong Kong Dollar'},
+   {currencySymbol: 'kn', countryFlag: '🇭🇷', currencyName: 'HRK', currencyDescription: 'Croatian Kuna'},
+   {currencySymbol: 'Ft', countryFlag: '🇭🇺', currencyName: 'HUF', currencyDescription: 'Hungarian Forint'},
+   {currencySymbol: 'Rp', countryFlag: '🇮🇩', currencyName: 'IDR', currencyDescription: 'Indonesian Rupiah'},
+   {currencySymbol: '₪', countryFlag: '🇮🇱', currencyName: 'ILS', currencyDescription: 'Israeli New Sheqel'},
+   /*{currencySymbol: '₹', countryFlag: '🇮🇳', currencyName: 'INR', currencyDescription: 'Indian Rupee'},*/
+   {currencySymbol: '¥', countryFlag: '🇯🇵', currencyName: 'JPY', currencyDescription: 'Japanese Yen'},
+   {currencySymbol: '/-', countryFlag: '🇰🇪', currencyName: 'KES', currencyDescription: 'Kenyan Shilling'},
+   {currencySymbol: 'ك', countryFlag: '🇰🇼', currencyName: 'KWD', currencyDescription: 'Kuwaiti Dinar'},
+   {currencySymbol: 'Mex$', countryFlag: '🇲🇽', currencyName: 'MXN', currencyDescription: 'Mexican Peso'},
+   {currencySymbol: 'RM', countryFlag: '🇲🇾', currencyName: 'MYR', currencyDescription: 'Malaysian Ringgit'},
+   {currencySymbol: 'kr', countryFlag: '🇳🇴', currencyName: 'NOK', currencyDescription: 'Norwegian Krone'},
+   {currencySymbol: '$', countryFlag: '🇳🇿', currencyName: 'NZD', currencyDescription: 'New Zealand Dollar'},
+   {currencySymbol: 'ر.ع', countryFlag: '🇴🇲', currencyName: 'OMR', currencyDescription: 'Omani Rial'},
+   {currencySymbol: '₱', countryFlag: '🇵🇭', currencyName: 'PHP', currencyDescription: 'Philippine Peso'},
+   {currencySymbol: 'zł', countryFlag: '🇵🇱', currencyName: 'PLN', currencyDescription: 'Polish Zloty'},
+   {currencySymbol: 'ر.ق', countryFlag: '🇶🇦', currencyName: 'QAR', currencyDescription: 'Qatari Rial'},
+   {currencySymbol: 'lei', countryFlag: '🇷🇴', currencyName: 'RON', currencyDescription: 'Romanian New Leu'},
+   {currencySymbol: 'ر.س', countryFlag: '🇸🇦', currencyName: 'SAR', currencyDescription: 'Saudi Riyal'},
+   {currencySymbol: 'kr', countryFlag: '🇸🇪', currencyName: 'SEK', currencyDescription: 'Swedish Krona'},
+   {currencySymbol: 'S$', countryFlag: '🇸🇬', currencyName: 'SGD', currencyDescription: 'Singapore Dollar'},
+   {currencySymbol: '฿', countryFlag: '🇹🇭', currencyName: 'THB', currencyDescription: 'Thai Baht'},
+   {currencySymbol: '₺', countryFlag: '🇹🇷', currencyName: 'TRY', currencyDescription: 'Turkish Lira'},
+   {currencySymbol: 'USh', countryFlag: '🇺🇬', currencyName: 'UGX', currencyDescription: 'Ugandan Shilling'},
+   {currencySymbol: 'R', countryFlag: '🇿🇦', currencyName: 'ZAR', currencyDescription: 'South African Rand'}
+];
+
+window.sellListGp = [
     {
         currencySymbol: "$",
         countryFlag: "🇺🇸",
@@ -6,6 +45,7 @@ window.sellList = [
         currencyDescription: "United States dollar",
     },
 ];
+
 window.addEventListener("alpine:init", () => {
     // sort a-z
     buttonsList.sort(function (a, b) {
@@ -13,7 +53,7 @@ window.addEventListener("alpine:init", () => {
         var textB = b.currencyName.toUpperCase();
         return textA < textB ? -1 : textA > textB ? 1 : 0;
     });
-    Alpine.data("exchanger2", () => ({
+    Alpine.data("exchangerGp", () => ({
         data: {
             buyCurrency: {
                 currencySymbol: "€",
