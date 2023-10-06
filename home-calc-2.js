@@ -30,6 +30,7 @@ window.addEventListener("alpine:init", () => {
             valueFrom: '0',
             valueTo: '1,000',
             rate: 1,
+            rateT: 1,
             valueFromNumber: '',
             valueToNumber: ''
         },
@@ -57,6 +58,7 @@ window.addEventListener("alpine:init", () => {
 
         async refreshData(callback) {
             let result;
+            let resultT;
             try {
                 let buy = this.data.buyCurrency.currencyName;
                 let sell = this.data.sellCurrency.currencyName;
@@ -74,11 +76,27 @@ window.addEventListener("alpine:init", () => {
                         redirect: "follow",
                     }
                 );
+                const responseT = await fetch(
+                    "https://app.koverly.com/api/currency/rate",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            buyCurrency: buy,
+                            sellCurrency: sell,
+                        }),
+                        redirect: "follow",
+                    }
+                );
                 result = JSON.parse(await response.text());
+                resultT = JSON.parse(await responseT.text());
             } catch (e) {
                 console.log(e);
             }
             this.data.rate = result.rate;
+            this.data.rateT = resultT.rate;
             if (callback) {
                 callback.apply(this);
             }
