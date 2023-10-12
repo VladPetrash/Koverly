@@ -116,6 +116,7 @@ window.addEventListener("alpine:init", () => {
                         redirect: "follow",
                     }
                 );
+               result = JSON.parse(await response.text());
             } catch (e) {
                 console.log(e);
             }
