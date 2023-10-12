@@ -116,27 +116,11 @@ window.addEventListener("alpine:init", () => {
                         redirect: "follow",
                     }
                 );
-                const inverseResponse = await fetch(
-                    "https://app.koverly.com/api/currency/rate",
-                    {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify({
-                            buyCurrency: buy,
-                            sellCurrency: sell,
-                        }),
-                        redirect: "follow",
-                    }
-                );
-                result = JSON.parse(await response.text());
-                inverseResult = JSON.parse(await inverseResponse.text());
             } catch (e) {
                 console.log(e);
             }
             this.data.rate = result.rate;
-            this.data.inverseRate = inverseResult.rate;
+            this.data.inverseRate = 1 / this.data.rate;
             if (callback) {
                 callback.apply(this);
             }
