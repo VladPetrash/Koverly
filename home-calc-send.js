@@ -161,6 +161,8 @@ window.addEventListener("alpine:init", () => {
             this.data.totalFrom = this.data.valueFromNumber - this.data.rateLock;
             this.data.valueToNumber = this.data.totalFrom * this.data.rate;
             this.data.valueTo = this.data.valueToNumber.toLocaleString("en-US", {maximumFractionDigits: 2,});
+            this.data.rateLock = this.data.rateLock.toLocaleString("en-US", {maximumFractionDigits: 2,});
+            this.data.totalFrom = this.data.totalFrom.toLocaleString("en-US", {maximumFractionDigits: 2,});
             console.log("sell");
         },
 
@@ -171,6 +173,8 @@ window.addEventListener("alpine:init", () => {
             this.data.rateLock = this.data.valueFromNumber * 0.001;
             this.data.totalFrom = this.data.valueFromNumber - this.data.rateLock;
             this.data.valueFrom = this.data.valueFromNumber.toLocaleString("en-US", {maximumFractionDigits: 2,});
+            this.data.rateLock = this.data.rateLock.toLocaleString("en-US", {maximumFractionDigits: 2,});
+            this.data.totalFrom = this.data.totalFrom.toLocaleString("en-US", {maximumFractionDigits: 2,});
             console.log("buy" , "valueFromNumber = " + this.data.valueFromNumber, "valueFrom = " + this.data.valueFrom);
         },
     }));
