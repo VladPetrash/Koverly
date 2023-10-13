@@ -75,7 +75,9 @@ window.addEventListener("alpine:init", () => {
             valueToNumber: ''
         },
         init() {
-            this.refreshData(this.buyValue);
+           setTimeout(() => {
+              this.refreshData(this.buyValue);
+            }, "2000");
         },
 
         validate(evt) {
