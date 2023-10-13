@@ -131,7 +131,7 @@ window.addEventListener("alpine:init", () => {
         sellValue() {
             this.refreshData();
             this.data.valueFromNumber = Number(parseFloat(this.data.valueFrom.replace(/,/g, '')));
-            this.data.valueToNumber = this.data.valueFromNumber / this.data.inverseRate;
+            this.data.valueToNumber = this.data.valueFromNumber / this.data.rate;
             this.data.valueTo = this.data.valueToNumber.toLocaleString("en-US", {maximumFractionDigits: 2,});
             console.log("sell");
         },
