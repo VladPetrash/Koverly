@@ -169,7 +169,7 @@ window.addEventListener("alpine:init", () => {
         buyValue() {
             this.refreshData();
             this.data.valueToNumber = Number(parseFloat(this.data.valueTo.replace(/,/g, '')));
-            this.data.valueFromNumber = this.data.valueToNumber / this.data.inverseRate / 0.999;
+            this.data.valueFromNumber = this.data.valueToNumber / this.data.rate / 0.999;
             this.data.rateLock = this.data.valueFromNumber * 0.001;
             this.data.totalFrom = this.data.valueFromNumber - this.data.rateLock;
             this.data.valueFrom = this.data.valueFromNumber.toLocaleString("en-US", {maximumFractionDigits: 2,});
