@@ -122,7 +122,7 @@ window.addEventListener("alpine:init", () => {
                 console.log(e);
             }
             this.data.rate = result.rate - 0.001;
-            this.data.inverseRate = 1 / this.data.rate
+            this.data.inverseRate = (1 / this.data.rate).toFixed(2):
             if (callback) {
                 callback.apply(this);
             }
