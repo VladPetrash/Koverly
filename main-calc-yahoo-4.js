@@ -111,10 +111,12 @@ window.addEventListener("alpine:init", () => {
             const options = {
                 method: "GET",
                 headers: {
-                    "X-RapidAPI-Key":
-                        "6672486f35mshf89f62beecbe117p14025ejsn2594d0302357",
-                    "X-RapidAPI-Host": "yahoofinance-stocks1.p.rapidapi.com",
-                },
+                          "X-RapidAPI-Key":
+                              "6672486f35mshf89f62beecbe117p14025ejsn2594d0302357",
+                          "X-RapidAPI-Host":
+                              "yahoofinance-stocks1.p.rapidapi.com",
+                          Accept: "application/json",
+                      },
             };
             const endpoint =
                 "https://yahoofinance-stocks1.p.rapidapi.com/stock-metadata?Symbol=EUR";
